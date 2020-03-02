@@ -26,7 +26,7 @@ int main() {
 		//glDrawArrays(GL_ARRAY_BUFFER, 0, 8);
 		win.update();
 	}
-
+	//newcommit
 
 	return 0;
 }
