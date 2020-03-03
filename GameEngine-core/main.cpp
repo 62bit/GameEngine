@@ -1,6 +1,7 @@
 #include <iostream>
 #include "src\graphics\window.h"
 #include "src\maths\maths.h"
+#
 int main() {
 	
 	using namespace engine;
@@ -20,6 +21,9 @@ int main() {
 	vec4 a(5.0f, 1.0f,1.0f,5.6f);
 
 	vec4 c = a + vector;
+	mat4 position = mat4::translation(vec3(2, 3, 4));
+	position  = position * mat4::identity();
+
 	while (!win.closed())
 	{
 		win.clear();
