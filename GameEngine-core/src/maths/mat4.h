@@ -1,12 +1,19 @@
 #pragma once
 
 #include "vec3.h"
+#include "vec4.h"
+#include "maths_func.h"
+
 namespace engine {
 	namespace maths {
 
 		struct mat4
 		{
-			float elements[4 * 4];
+			union  //it is a structure that allows the same storage space to be used to store values of different data types
+			{
+				float elements[4 * 4];
+				vec4 columns[4];
+			};
 
 			mat4();
 			mat4(float diagonal);

@@ -23,15 +23,19 @@ int main() {
 	vec4 c = a + vector;
 	mat4 position = mat4::translation(vec3(2, 3, 4));
 	position  = position * mat4::identity();
+	position.elements[12] = 12.0f;
+
+	vec4 pos = position.columns[3];
+	std::cout << pos << std::endl;
 
 	while (!win.closed())
 	{
 		win.clear();
-		std::cout << a<< std::endl;
+		//std::cout << a<< std::endl;
 		double x, y;
 		win.isMouseButtonPressed(GLFW_KEY_A);
 		win.getMousePosition(x, y);
-		std::cout << "x " << x << " y " << y << std::endl;
+		//std::cout << "x " << x << " y " << y << std::endl;
 		
 		glBegin(GL_TRIANGLES);
 		glVertex2f(-0.5f, -0.5f);
